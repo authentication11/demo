@@ -1,0 +1,24 @@
+{
+  "name": "mobile-receipt-generator",
+  "version": "1.0.0",
+  "description": "Mobile-optimized transaction receipt generator",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.17.3"
+  },
+  "keywords": [
+    "receipt",
+    "mobile",
+    "transaction",
+    "generator"
+  ],
+  "author": "Receipt Generator",
+  "license": "MIT"
+}
