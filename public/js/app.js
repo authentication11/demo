@@ -319,6 +319,9 @@ class BankingApp {
     showReceipt(transactionData) {
         this.hideLoading();
         
+        // Store current transaction for receipt display
+        localStorage.setItem('currentTransaction', JSON.stringify(transactionData));
+        
         const receiptContent = document.getElementById('receiptContent');
         receiptContent.innerHTML = `
             <div class="receipt-header">
@@ -328,7 +331,7 @@ class BankingApp {
             <div class="success-icon">
                 <div class="check-circle">
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                        <circle cx="40" cy="40" r="35" fill="#00d4aa"/>
+                        <circle cx="40" cy="40" r="35" fill="#321457"/>
                         <path d="M25 40L35 50L55 30" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
@@ -349,13 +352,113 @@ class BankingApp {
                 <button class="submit-btn" onclick="app.showDashboard()" style="margin-bottom: 15px;">
                     Back to Dashboard
                 </button>
-                <button class="submit-btn" onclick="app.showTransactionHistory()" style="background: rgba(0, 212, 170, 0.1); color: #00d4aa;">
+                <button class="submit-btn" onclick="app.viewCurrentReceipt()" style="background: rgba(50, 20, 87, 0.1); color: #321457; margin-bottom: 15px;">
+                    View Receipt
+                </button>
+                <button class="submit-btn" onclick="app.showTransactionHistory()" style="background: rgba(50, 20, 87, 0.1); color: #321457;">
                     View Transaction History
                 </button>
             </div>
         `;
         
         this.showPage('receiptPage');
+    }
+
+    // View current receipt
+    viewCurrentReceipt() {
+        const currentTransaction = JSON.parse(localStorage.getItem('currentTransaction'));
+        if (currentTransaction) {
+            this.showTransactionReceipt(currentTransaction);
+        }
+    }
+
+    // Show transaction receipt (detailed view)
+    showTransactionReceipt(transaction) {
+        const receiptContent = document.getElementById('receiptContent');
+        receiptContent.innerHTML = `
+            <div class="receipt-header">
+                <button class="back-btn" onclick="app.showDashboard()" style="background: none; border: none; color: #321457; font-size: 16px; cursor: pointer;">
+                    ← Back
+                </button>
+                <span class="done-text">Receipt</span>
+            </div>
+
+            <div class="success-icon">
+                <div class="check-circle">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                        <circle cx="30" cy="30" r="25" fill="#321457"/>
+                        <path d="M20 30L25 35L40 20" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+
+            <h1 class="success-title">Transaction Receipt</h1>
+
+            <div class="transaction-summary">
+                <div class="summary-row">
+                    <span class="label">Recipient</span>
+                    <span class="value">${transaction.accountName}</span>
+                </div>
+                <div class="summary-row">
+                    <span class="label">Bank</span>
+                    <span class="value">${transaction.bankName}</span>
+                </div>
+                <div class="summary-row">
+                    <span class="label">Account Number</span>
+                    <span class="value">${transaction.accountNumber}</span>
+                </div>
+                <div class="summary-row">
+                    <span class="label">Amount</span>
+                    <span class="value">₦${transaction.amount.toFixed(2)}</span>
+                </div>
+                <div class="summary-row">
+                    <span class="label">Reference</span>
+                    <span class="value">${transaction.referenceNumber}</span>
+                </div>
+                <div class="summary-row">
+                    <span class="label">Date</span>
+                    <span class="value">${this.formatDate(transaction.transactionDate)}</span>
+                </div>
+                <div class="summary-row">
+                    <span class="label">Status</span>
+                    <span class="value" style="color: #321457; font-weight: 700;">${transaction.status}</span>
+                </div>
+                <div class="summary-row">
+                    <span class="label">Description</span>
+                    <span class="value">${transaction.narration}</span>
+                </div>
+            </div>
+
+            <div style="padding: 20px; margin-top: 20px;">
+                <button class="submit-btn" onclick="app.shareReceipt('${transaction.id}')" style="margin-bottom: 15px;">
+                    Share Receipt
+                </button>
+                <button class="submit-btn" onclick="app.showDashboard()" style="background: rgba(50, 20, 87, 0.1); color: #321457;">
+                    Back to Dashboard
+                </button>
+            </div>
+        `;
+        
+        this.showPage('receiptPage');
+    }
+
+    // Share receipt
+    shareReceipt(transactionId) {
+        const transaction = this.transactions.find(t => t.id === transactionId);
+        if (transaction && navigator.share) {
+            navigator.share({
+                title: 'Transaction Receipt',
+                text: `Transfer of ₦${transaction.amount.toFixed(2)} to ${transaction.accountName} was successful. Reference: ${transaction.referenceNumber}`,
+            });
+        } else {
+            // Fallback for browsers without Web Share API
+            const receiptText = `Transaction Receipt\n\nRecipient: ${transaction.accountName}\nBank: ${transaction.bankName}\nAmount: ₦${transaction.amount.toFixed(2)}\nReference: ${transaction.referenceNumber}\nStatus: ${transaction.status}`;
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(receiptText);
+                this.showError('Receipt copied to clipboard!');
+            }
+        }
     }
 
     // Add money to balance
@@ -434,7 +537,7 @@ class BankingApp {
         }
 
         transactionsList.innerHTML = this.transactions.map(transaction => `
-            <div class="history-transaction-item" onclick="app.showTransactionDetails('${transaction.id}')">
+            <div class="history-transaction-item" onclick="app.showTransactionReceipt(${JSON.stringify(transaction).replace(/"/g, '&quot;')})">
                 <div class="transaction-icon ${transaction.type === 'Credit' ? 'green' : 'purple'}">
                     ${this.getTransactionIcon(transaction.type)}
                 </div>
@@ -500,15 +603,6 @@ class BankingApp {
             hour12: false
         };
         return date.toLocaleDateString('en-US', options).replace(',', 'th,');
-    }
-
-    // Show transaction details
-    showTransactionDetails(transactionId) {
-        const transaction = this.transactions.find(t => t.id === transactionId);
-        if (!transaction) return;
-
-        // Create detailed view (you can expand this)
-        alert(`Transaction Details:\n\nAmount: ₦${transaction.amount.toFixed(2)}\nReference: ${transaction.referenceNumber}\nStatus: ${transaction.status}\nDate: ${this.formatDate(transaction.transactionDate)}`);
     }
 
     // Page navigation
