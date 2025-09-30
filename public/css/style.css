@@ -100,19 +100,19 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px 10px;
+    padding: 12px 16px 8px;
     background: #f8f9fa;
 }
 
 .user-info {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .avatar {
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid #321457;
@@ -129,7 +129,7 @@ body {
 }
 
 .greeting-text {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: #2d3436;
 }
@@ -137,15 +137,15 @@ body {
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .help-badge {
     background: #ff6b35;
     color: white;
-    padding: 3px 6px;
-    border-radius: 10px;
-    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 8px;
+    font-size: 9px;
     font-weight: 700;
 }
 
@@ -156,14 +156,14 @@ body {
 
 .notification-badge {
     position: absolute;
-    top: -6px;
-    right: -6px;
+    top: -5px;
+    right: -5px;
     background: #ff6b35;
     color: white;
     border-radius: 50%;
-    width: 16px;
-    height: 16px;
-    font-size: 10px;
+    width: 14px;
+    height: 14px;
+    font-size: 9px;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -173,11 +173,11 @@ body {
 /* Balance Card */
 .balance-card {
     background: linear-gradient(135deg, #321457, #4a1a6b);
-    margin: 10px 20px 20px;
-    border-radius: 16px;
-    padding: 20px;
+    margin: 8px 16px 16px;
+    border-radius: 14px;
+    padding: 16px;
     color: white;
-    box-shadow: 0 8px 25px rgba(50, 20, 87, 0.3);
+    box-shadow: 0 6px 20px rgba(50, 20, 87, 0.25);
     position: relative;
     overflow: hidden;
 }
@@ -197,14 +197,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .balance-label {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 12px;
+    gap: 5px;
+    font-size: 11px;
     font-weight: 500;
     opacity: 0.9;
 }
@@ -212,13 +212,13 @@ body {
 .transaction-history-btn {
     display: flex;
     align-items: center;
-    gap: 4px;
-    font-size: 12px;
+    gap: 3px;
+    font-size: 11px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    padding: 4px 8px;
-    border-radius: 12px;
+    padding: 3px 6px;
+    border-radius: 10px;
 }
 
 .transaction-history-btn:hover {
@@ -228,20 +228,20 @@ body {
 .balance-amount {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 28px;
+    gap: 6px;
+    font-size: 24px;
     font-weight: 800;
-    margin-bottom: 15px;
-    letter-spacing: -1px;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
 }
 
 .add-money-btn {
     background: rgba(255, 255, 255, 0.2);
     border: none;
     color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 12px;
+    padding: 8px 16px;
+    border-radius: 18px;
+    font-size: 11px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -258,66 +258,66 @@ body {
 .business-service {
     display: flex;
     align-items: center;
-    background: rgba(50, 20, 87, 0.1);
-    margin: 0 20px 20px;
-    padding: 12px 16px;
-    border-radius: 12px;
-    border-left: 4px solid #321457;
+    background: rgba(50, 20, 87, 0.08);
+    margin: 0 16px 16px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border-left: 3px solid #321457;
 }
 
 .service-icon {
-    margin-right: 12px;
+    margin-right: 10px;
 }
 
 .service-text {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 1px;
 }
 
 .service-title {
-    font-size: 12px;
+    font-size: 11px;
     color: #666;
     font-weight: 500;
 }
 
 .service-amount {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     color: #2d3436;
 }
 
-/* Recent Transactions */
+/* Recent Transactions - REMOVED OWealth */
 .recent-transactions {
-    margin: 0 20px 20px;
+    margin: 0 16px 16px;
 }
 
 .transaction-item {
     display: flex;
     align-items: center;
     background: white;
-    padding: 15px 16px;
-    border-radius: 12px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 12px 14px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
 .transaction-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .transaction-icon {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 12px;
+    margin-right: 10px;
 }
 
 .transaction-icon.purple {
@@ -333,22 +333,22 @@ body {
 }
 
 .transaction-title {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     color: #2d3436;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
 }
 
 .transaction-date {
-    font-size: 11px;
+    font-size: 10px;
     color: #636e72;
     font-weight: 500;
 }
 
 .transaction-amount {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
-    margin-right: 8px;
+    margin-right: 6px;
 }
 
 .transaction-amount.positive {
@@ -360,10 +360,10 @@ body {
 }
 
 .transaction-status {
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 600;
-    padding: 3px 6px;
-    border-radius: 8px;
+    padding: 2px 5px;
+    border-radius: 6px;
 }
 
 .transaction-status.success {
@@ -380,11 +380,11 @@ body {
 .quick-actions {
     display: flex;
     justify-content: space-around;
-    margin: 0 20px 20px;
+    margin: 0 16px 16px;
     background: white;
-    padding: 16px;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 14px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
 }
 
 .action-item {
@@ -393,23 +393,23 @@ body {
     align-items: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    padding: 8px;
-    border-radius: 12px;
+    padding: 6px;
+    border-radius: 10px;
 }
 
 .action-item:hover {
     background: rgba(50, 20, 87, 0.05);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 .action-icon {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     transition: all 0.3s ease;
 }
 
@@ -418,11 +418,11 @@ body {
 }
 
 .action-item:hover .action-icon {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .action-item span {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
     color: #2d3436;
 }
@@ -431,12 +431,12 @@ body {
 .services-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin: 0 20px 20px;
+    gap: 12px;
+    margin: 0 16px 16px;
     background: white;
-    padding: 20px 16px;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 16px 12px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
 }
 
 .service-item {
@@ -445,35 +445,35 @@ body {
     align-items: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    padding: 12px 8px;
-    border-radius: 12px;
+    padding: 10px 6px;
+    border-radius: 10px;
     position: relative;
 }
 
 .service-item:hover {
     background: rgba(50, 20, 87, 0.05);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 .service-item .service-icon {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     background: rgba(50, 20, 87, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     transition: all 0.3s ease;
 }
 
 .service-item:hover .service-icon {
-    background: rgba(50, 20, 87, 0.2);
-    transform: scale(1.1);
+    background: rgba(50, 20, 87, 0.15);
+    transform: scale(1.05);
 }
 
 .service-item span {
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 600;
     color: #2d3436;
     text-align: center;
@@ -481,14 +481,14 @@ body {
 
 .promo-badge {
     position: absolute;
-    top: 4px;
-    right: 4px;
+    top: 3px;
+    right: 3px;
     background: #ff6b35;
     color: white;
-    font-size: 8px;
+    font-size: 7px;
     font-weight: 700;
-    padding: 2px 4px;
-    border-radius: 6px;
+    padding: 1px 3px;
+    border-radius: 5px;
 }
 
 .promo-badge.green {
@@ -498,24 +498,24 @@ body {
 /* Promo Banner */
 .promo-banner {
     background: linear-gradient(135deg, #fdcb6e, #e17055);
-    margin: 0 20px 20px;
-    padding: 16px;
-    border-radius: 16px;
+    margin: 0 16px 16px;
+    padding: 14px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     color: white;
-    box-shadow: 0 8px 25px rgba(253, 203, 110, 0.3);
+    box-shadow: 0 6px 20px rgba(253, 203, 110, 0.25);
 }
 
 .promo-text h3 {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
 }
 
 .promo-text p {
-    font-size: 11px;
+    font-size: 10px;
     opacity: 0.9;
 }
 
@@ -530,9 +530,9 @@ body {
     background: white;
     display: flex;
     justify-content: space-around;
-    padding: 12px 0 20px;
+    padding: 10px 0 18px;
     border-top: 1px solid #f1f2f6;
-    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.04);
 }
 
 .nav-item {
@@ -541,13 +541,13 @@ body {
     align-items: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    padding: 4px;
+    padding: 3px;
 }
 
 .nav-item span {
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 600;
-    margin-top: 4px;
+    margin-top: 3px;
     color: #999;
 }
 
@@ -559,7 +559,7 @@ body {
 .container {
     max-width: 414px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 16px;
     background: white;
     min-height: 100vh;
 }
@@ -569,8 +569,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
-    padding-bottom: 15px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
     border-bottom: 1px solid #f1f2f6;
 }
 
@@ -579,8 +579,8 @@ body {
     border: none;
     color: #636e72;
     cursor: pointer;
-    padding: 8px;
-    border-radius: 8px;
+    padding: 6px;
+    border-radius: 6px;
     transition: all 0.3s ease;
 }
 
@@ -590,7 +590,7 @@ body {
 }
 
 .page-header h1 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     color: #2d3436;
 }
@@ -599,7 +599,7 @@ body {
     background: none;
     border: none;
     color: #321457;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -612,52 +612,52 @@ body {
 /* Demo Header */
 .demo-header {
     text-align: center;
-    margin-bottom: 30px;
-    padding: 20px;
+    margin-bottom: 24px;
+    padding: 16px;
     background: linear-gradient(135deg, #321457, #4a1a6b);
     color: white;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(50, 20, 87, 0.3);
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(50, 20, 87, 0.25);
 }
 
 .demo-header h1 {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .demo-warning {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 600;
     background: rgba(255, 255, 255, 0.2);
-    padding: 6px 12px;
-    border-radius: 16px;
+    padding: 4px 10px;
+    border-radius: 12px;
     display: inline-block;
 }
 
 /* Form Styles */
 .transaction-form, .add-money-form {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: 14px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     font-weight: 600;
     color: #2d3436;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .form-group input, .form-group select {
     width: 100%;
-    padding: 14px;
+    padding: 12px;
     border: 1.5px solid #ddd;
-    border-radius: 10px;
-    font-size: 14px;
+    border-radius: 8px;
+    font-size: 13px;
     transition: all 0.3s ease;
     background: #fff;
     color: #2d3436;
@@ -673,16 +673,16 @@ body {
 .form-group select {
     appearance: none;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-    background-position: right 12px center;
+    background-position: right 10px center;
     background-repeat: no-repeat;
-    background-size: 16px;
+    background-size: 14px;
 }
 
 .balance-info {
-    font-size: 12px;
+    font-size: 11px;
     color: #321457;
     font-weight: 600;
-    margin-top: 4px;
+    margin-top: 3px;
 }
 
 .submit-btn {
@@ -690,19 +690,19 @@ body {
     background: linear-gradient(135deg, #321457, #4a1a6b);
     color: white;
     border: none;
-    padding: 16px;
-    border-radius: 10px;
-    font-size: 15px;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 13px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 10px;
-    box-shadow: 0 4px 15px rgba(50, 20, 87, 0.3);
+    margin-top: 8px;
+    box-shadow: 0 4px 12px rgba(50, 20, 87, 0.25);
 }
 
 .submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(50, 20, 87, 0.4);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(50, 20, 87, 0.35);
 }
 
 .submit-btn:active {
@@ -712,44 +712,44 @@ body {
 /* Transaction History Styles */
 .filter-section {
     display: flex;
-    gap: 12px;
-    margin-bottom: 20px;
+    gap: 10px;
+    margin-bottom: 16px;
 }
 
 .filter-select {
     flex: 1;
-    padding: 10px 14px;
+    padding: 8px 12px;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 12px;
+    border-radius: 6px;
+    font-size: 11px;
     background: white;
     appearance: none;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-    background-position: right 12px center;
+    background-position: right 10px center;
     background-repeat: no-repeat;
-    background-size: 16px;
+    background-size: 14px;
 }
 
 .month-section {
     background: white;
-    padding: 16px;
-    border-radius: 12px;
-    margin-bottom: 16px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 14px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .month-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .month-header h2 {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 16px;
+    gap: 5px;
+    font-size: 14px;
     font-weight: 700;
     color: #2d3436;
 }
@@ -758,9 +758,9 @@ body {
     background: #321457;
     color: white;
     border: none;
-    padding: 6px 12px;
-    border-radius: 16px;
-    font-size: 10px;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 9px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -773,8 +773,8 @@ body {
 
 .month-summary {
     display: flex;
-    gap: 16px;
-    font-size: 12px;
+    gap: 14px;
+    font-size: 11px;
     font-weight: 600;
 }
 
@@ -788,15 +788,15 @@ body {
 
 .transactions-list {
     background: white;
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .history-transaction-item {
     display: flex;
     align-items: center;
-    padding: 15px 16px;
+    padding: 12px 14px;
     border-bottom: 1px solid #f8f9fa;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -810,9 +810,9 @@ body {
     border-bottom: none;
 }
 
-/* Receipt Styles */
+/* Receipt Styles - PREMIUM DESIGN LIKE FIRST IMAGE */
 .receipt-page {
-    background: #ffffff;
+    background: #f8f9fa;
     color: #333;
     min-height: 100vh;
 }
@@ -821,26 +821,26 @@ body {
     max-width: 414px;
     margin: 0 auto;
     padding: 0;
-    background: #ffffff;
+    background: #f8f9fa;
     min-height: 100vh;
 }
 
 .receipt-header {
     display: flex;
     justify-content: flex-end;
-    padding: 20px 20px 0;
-    margin-bottom: 30px;
+    padding: 16px 20px 0;
+    margin-bottom: 20px;
 }
 
 .done-text {
-    color: #321457;
+    color: #00d4aa;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .success-icon {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     animation: bounceIn 0.8s ease-out;
 }
 
@@ -857,48 +857,48 @@ body {
 }
 
 .check-circle svg {
-    filter: drop-shadow(0 4px 12px rgba(50, 20, 87, 0.3));
+    filter: drop-shadow(0 4px 12px rgba(0, 212, 170, 0.3));
 }
 
 .success-title {
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     color: #2d3436;
 }
 
 .amount-display {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .amount-display span {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 800;
     color: #2d3436;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
 }
 
 .receipt-message {
     text-align: center;
-    font-size: 13px;
-    line-height: 1.5;
-    margin-bottom: 30px;
-    padding: 0 25px;
-    color: #321457;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 24px;
+    padding: 0 20px;
+    color: #00d4aa;
     font-weight: 500;
 }
 
-/* Action Buttons for Receipt */
+/* Action Buttons for Receipt - EXACTLY LIKE FIRST IMAGE */
 .action-buttons {
     display: flex;
     justify-content: space-around;
-    margin: 0 20px 30px;
+    margin: 0 16px 24px;
     background: white;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .action-buttons .action-item {
@@ -907,65 +907,67 @@ body {
     align-items: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    padding: 10px;
-    border-radius: 12px;
+    padding: 8px;
+    border-radius: 10px;
 }
 
 .action-buttons .action-item:hover {
-    background: rgba(50, 20, 87, 0.05);
-    transform: translateY(-2px);
+    background: rgba(0, 212, 170, 0.05);
+    transform: translateY(-1px);
 }
 
 .action-buttons .action-icon {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 8px;
-    background: rgba(50, 20, 87, 0.1);
+    margin-bottom: 6px;
+    background: rgba(0, 212, 170, 0.1);
     transition: all 0.3s ease;
 }
 
 .action-buttons .action-item:hover .action-icon {
-    background: rgba(50, 20, 87, 0.2);
-    transform: scale(1.1);
+    background: rgba(0, 212, 170, 0.15);
+    transform: scale(1.05);
 }
 
 .action-buttons .action-item span {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
     color: #2d3436;
     text-align: center;
 }
 
-/* Bonus Section */
+/* Bonus Section - EXACTLY LIKE FIRST IMAGE */
 .bonus-section {
-    margin: 0 20px 30px;
+    margin: 0 16px 24px;
 }
 
 .bonus-section h3 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     color: #2d3436;
-    margin-bottom: 15px;
-    text-align: center;
+    margin-bottom: 12px;
+    text-align: left;
 }
 
 .bonus-item {
     display: flex;
     align-items: center;
     background: white;
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .bonus-icon {
-    font-size: 24px;
-    margin-right: 15px;
+    font-size: 20px;
+    margin-right: 12px;
+    width: 32px;
+    text-align: center;
 }
 
 .bonus-text {
@@ -973,23 +975,23 @@ body {
 }
 
 .bonus-text h4 {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     color: #2d3436;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
 }
 
 .bonus-text p {
-    font-size: 11px;
+    font-size: 10px;
     color: #666;
 }
 
 .bonus-btn {
-    background: #321457;
+    background: #00d4aa;
     color: white;
     border: none;
     padding: 6px 12px;
-    border-radius: 16px;
+    border-radius: 14px;
     font-size: 10px;
     font-weight: 700;
     cursor: pointer;
@@ -997,36 +999,36 @@ body {
 }
 
 .bonus-btn:hover {
-    background: #4a1a6b;
+    background: #00c49a;
     transform: translateY(-1px);
 }
 
-/* Loan Banner */
+/* Loan Banner - EXACTLY LIKE FIRST IMAGE */
 .loan-banner {
-    background: linear-gradient(135deg, #321457, #4a1a6b);
-    margin: 0 20px 30px;
-    padding: 20px;
-    border-radius: 16px;
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    margin: 0 16px 24px;
+    padding: 16px;
+    border-radius: 12px;
     color: white;
     text-align: center;
-    box-shadow: 0 8px 25px rgba(50, 20, 87, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
 }
 
 .loan-banner-content {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .loan-info h4 {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     opacity: 0.9;
 }
 
 .loan-amount, .loan-days {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 800;
 }
 
@@ -1034,9 +1036,9 @@ body {
     background: rgba(255, 255, 255, 0.2);
     border: none;
     color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 12px;
+    padding: 8px 16px;
+    border-radius: 16px;
+    font-size: 11px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1049,11 +1051,11 @@ body {
     transform: translateY(-1px);
 }
 
-/* Details Page Styles */
+/* Details Page Styles - EXACTLY LIKE SECOND IMAGE */
 .details-container {
     max-width: 414px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 16px;
     background: #f8f9fa;
     min-height: 100vh;
 }
@@ -1062,81 +1064,93 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
     border-bottom: 1px solid #f1f2f6;
 }
 
 .details-header h1 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     color: #2d3436;
 }
 
 .profile-icon {
-    color: #666;
+    color: #00d4aa;
 }
 
 .bank-icon {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .transfer-info {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 
 .transfer-info h2 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     color: #2d3436;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .amount-large {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 800;
     color: #2d3436;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .status-success {
-    color: #321457;
-    font-size: 14px;
+    color: #00d4aa;
+    font-size: 12px;
     font-weight: 600;
 }
 
 .progress-steps {
     background: white;
-    padding: 20px;
-    border-radius: 16px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .step {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+    position: relative;
 }
 
 .step:last-child {
     margin-bottom: 0;
 }
 
+.step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 28px;
+    width: 2px;
+    height: 20px;
+    background: #00d4aa;
+}
+
 .step-icon {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    background: #321457;
+    background: #00d4aa;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
-    margin-right: 15px;
+    margin-right: 12px;
+    z-index: 1;
 }
 
 .step-text {
@@ -1144,53 +1158,53 @@ body {
 }
 
 .step-title {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     color: #2d3436;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
 }
 
 .step-time {
-    font-size: 11px;
+    font-size: 10px;
     color: #666;
 }
 
 .disclaimer {
-    background: rgba(50, 20, 87, 0.1);
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    font-size: 12px;
+    background: rgba(0, 212, 170, 0.1);
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    font-size: 11px;
     color: #666;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 .contact-link {
-    color: #321457;
+    color: #00d4aa;
     text-decoration: none;
     font-weight: 600;
 }
 
 .transaction-summary, .transaction-details, .more-actions {
     background: white;
-    padding: 20px;
-    border-radius: 16px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .transaction-summary h3, .transaction-details h3, .more-actions h4 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     color: #2d3436;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .summary-row, .detail-row, .action-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .summary-row:last-child, .detail-row:last-child, .action-row:last-child {
@@ -1199,19 +1213,19 @@ body {
 
 .summary-row.total {
     border-top: 1px solid #f1f2f6;
-    padding-top: 12px;
-    margin-top: 12px;
+    padding-top: 10px;
+    margin-top: 10px;
     font-weight: 700;
 }
 
 .label {
-    font-size: 13px;
+    font-size: 12px;
     color: #666;
     font-weight: 500;
 }
 
 .value {
-    font-size: 13px;
+    font-size: 12px;
     color: #2d3436;
     font-weight: 600;
     text-align: right;
@@ -1220,33 +1234,33 @@ body {
 .strikethrough {
     text-decoration: line-through;
     color: #999;
-    margin-right: 8px;
+    margin-right: 6px;
 }
 
 .bottom-actions {
     display: flex;
-    gap: 15px;
-    margin: 0 20px 30px;
+    gap: 12px;
+    margin: 0 16px 24px;
 }
 
 .report-btn, .share-btn {
     flex: 1;
     padding: 12px;
-    border-radius: 10px;
-    font-size: 13px;
+    border-radius: 8px;
+    font-size: 12px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .report-btn {
-    background: rgba(225, 112, 85, 0.1);
-    color: #e17055;
-    border: 1px solid rgba(225, 112, 85, 0.3);
+    background: rgba(0, 212, 170, 0.1);
+    color: #00d4aa;
+    border: 1px solid rgba(0, 212, 170, 0.3);
 }
 
 .share-btn {
-    background: #321457;
+    background: #00d4aa;
     color: white;
     border: none;
 }
@@ -1258,8 +1272,8 @@ body {
 /* Error Styles */
 .error-message {
     color: #e74c3c;
-    font-size: 11px;
-    margin-top: 4px;
+    font-size: 10px;
+    margin-top: 3px;
     font-weight: 500;
     animation: fadeInUp 0.3s ease-out;
 }
@@ -1267,44 +1281,44 @@ body {
 .insufficient-funds {
     color: #e74c3c;
     background: rgba(231, 76, 60, 0.1);
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 11px;
     font-weight: 600;
-    margin-top: 8px;
-    border-left: 4px solid #e74c3c;
+    margin-top: 6px;
+    border-left: 3px solid #e74c3c;
 }
 
 /* Responsive Design */
 @media (max-width: 375px) {
     .dashboard-container,
     .container {
-        padding: 12px;
+        padding: 10px;
     }
     
     .balance-card {
-        margin: 8px 12px 16px;
-        padding: 16px;
+        margin: 6px 10px 12px;
+        padding: 14px;
     }
     
     .balance-amount {
-        font-size: 24px;
+        font-size: 22px;
     }
     
     .services-grid {
         grid-template-columns: repeat(4, 1fr);
-        gap: 12px;
-        margin: 0 12px 20px;
-        padding: 16px 12px;
+        gap: 10px;
+        margin: 0 10px 16px;
+        padding: 14px 10px;
     }
     
     .service-item .service-icon {
-        width: 35px;
-        height: 35px;
+        width: 32px;
+        height: 32px;
     }
     
     .service-item span {
-        font-size: 9px;
+        font-size: 8px;
     }
 }
 
@@ -1322,7 +1336,7 @@ body {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -1333,7 +1347,7 @@ body {
 @keyframes slideInRight {
     from {
         opacity: 0;
-        transform: translateX(30px);
+        transform: translateX(20px);
     }
     to {
         opacity: 1;
@@ -1342,7 +1356,7 @@ body {
 }
 
 .transaction-item {
-    animation: fadeInUp 0.6s ease-out;
+    animation: fadeInUp 0.5s ease-out;
     animation-fill-mode: both;
 }
 
