@@ -324,7 +324,7 @@ body {
     background: linear-gradient(135deg, #321457, #4a1a6b);
 }
 
-.transaction-icon.green {
+.transaction-icon.purple {
     background: linear-gradient(135deg, #321457, #4a1a6b);
 }
 
@@ -832,15 +832,23 @@ body {
     margin-bottom: 20px;
 }
 
-.done-text {
-    color: #00d4aa;
+.done-btn {
+    background: none;
+    border: none;
+    color: #321457;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.done-btn:hover {
+    color: #4a1a6b;
 }
 
 .success-icon {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 32px;
     animation: bounceIn 0.8s ease-out;
 }
 
@@ -857,48 +865,51 @@ body {
 }
 
 .check-circle svg {
-    filter: drop-shadow(0 4px 12px rgba(0, 212, 170, 0.3));
+    filter: drop-shadow(0 6px 20px rgba(50, 20, 87, 0.4));
+}
+
+.success-content {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 24px;
 }
 
 .success-title {
-    text-align: center;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 16px;
-    color: #2d3436;
-}
-
-.amount-display {
-    text-align: center;
-    margin-bottom: 16px;
-}
-
-.amount-display span {
-    font-size: 28px;
-    font-weight: 800;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
     color: #2d3436;
     letter-spacing: -0.5px;
 }
 
+.amount-display {
+    margin-bottom: 20px;
+}
+
+.amount-display span {
+    font-size: 36px;
+    font-weight: 800;
+    color: #2d3436;
+    letter-spacing: -1px;
+}
+
 .receipt-message {
-    text-align: center;
-    font-size: 12px;
-    line-height: 1.4;
-    margin-bottom: 24px;
-    padding: 0 20px;
-    color: #00d4aa;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #321457;
     font-weight: 500;
+    margin-top: 16px;
 }
 
 /* Action Buttons for Receipt - EXACTLY LIKE FIRST IMAGE */
 .action-buttons {
     display: flex;
     justify-content: space-around;
-    margin: 0 16px 24px;
+    margin: 0 20px 32px;
     background: white;
-    padding: 16px;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    padding: 20px 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .action-buttons .action-item {
@@ -907,66 +918,75 @@ body {
     align-items: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    padding: 8px;
-    border-radius: 10px;
+    padding: 12px 8px;
+    border-radius: 12px;
+    flex: 1;
 }
 
 .action-buttons .action-item:hover {
-    background: rgba(0, 212, 170, 0.05);
-    transform: translateY(-1px);
+    background: rgba(50, 20, 87, 0.05);
+    transform: translateY(-2px);
 }
 
 .action-buttons .action-icon {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 6px;
-    background: rgba(0, 212, 170, 0.1);
+    margin-bottom: 8px;
+    background: rgba(50, 20, 87, 0.1);
     transition: all 0.3s ease;
 }
 
 .action-buttons .action-item:hover .action-icon {
-    background: rgba(0, 212, 170, 0.15);
+    background: rgba(50, 20, 87, 0.15);
     transform: scale(1.05);
 }
 
 .action-buttons .action-item span {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
     color: #2d3436;
     text-align: center;
+    line-height: 1.3;
 }
 
 /* Bonus Section - EXACTLY LIKE FIRST IMAGE */
 .bonus-section {
-    margin: 0 16px 24px;
+    margin: 0 20px 32px;
 }
 
 .bonus-section h3 {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     color: #2d3436;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     text-align: left;
+    letter-spacing: -0.3px;
 }
 
 .bonus-item {
     display: flex;
     align-items: center;
     background: white;
-    padding: 12px;
-    border-radius: 10px;
-    margin-bottom: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.bonus-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
 }
 
 .bonus-icon {
-    font-size: 20px;
-    margin-right: 12px;
-    width: 32px;
+    font-size: 24px;
+    margin-right: 16px;
+    width: 40px;
     text-align: center;
 }
 
@@ -975,80 +995,101 @@ body {
 }
 
 .bonus-text h4 {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
     color: #2d3436;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
+    letter-spacing: -0.2px;
 }
 
 .bonus-text p {
-    font-size: 10px;
+    font-size: 12px;
     color: #666;
+    line-height: 1.4;
 }
 
-.bonus-btn {
-    background: #00d4aa;
+.bonus-btn.purple {
+    background: #321457;
     color: white;
     border: none;
-    padding: 6px 12px;
-    border-radius: 14px;
-    font-size: 10px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.bonus-btn:hover {
-    background: #00c49a;
-    transform: translateY(-1px);
-}
-
-/* Loan Banner - EXACTLY LIKE FIRST IMAGE */
-.loan-banner {
-    background: linear-gradient(135deg, #ffd700, #ff8c00);
-    margin: 0 16px 24px;
-    padding: 16px;
-    border-radius: 12px;
-    color: white;
-    text-align: center;
-    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
-}
-
-.loan-banner-content {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 12px;
-}
-
-.loan-info h4 {
-    font-size: 11px;
-    font-weight: 500;
-    margin-bottom: 4px;
-    opacity: 0.9;
-}
-
-.loan-amount, .loan-days {
-    font-size: 16px;
-    font-weight: 800;
-}
-
-.loan-cta {
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    color: white;
     padding: 8px 16px;
     border-radius: 16px;
     font-size: 11px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.bonus-btn.purple:hover {
+    background: #4a1a6b;
+    transform: translateY(-1px);
+}
+
+/* Loan Banner - Purple Gradient */
+.loan-banner.purple-gradient {
+    background: linear-gradient(135deg, #321457, #4a1a6b, #6c2c91);
+    margin: 0 20px 32px;
+    padding: 20px;
+    border-radius: 16px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(50, 20, 87, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.loan-banner.purple-gradient::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.loan-banner-content {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.loan-info h4 {
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    opacity: 0.9;
+}
+
+.loan-amount, .loan-days {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.loan-cta {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 1;
 }
 
 .loan-cta:hover {
     background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Details Page Styles - EXACTLY LIKE SECOND IMAGE */
@@ -1254,19 +1295,24 @@ body {
 }
 
 .report-btn {
-    background: rgba(0, 212, 170, 0.1);
-    color: #00d4aa;
-    border: 1px solid rgba(0, 212, 170, 0.3);
+    background: rgba(50, 20, 87, 0.1);
+    color: #321457;
+    border: 1px solid rgba(50, 20, 87, 0.3);
 }
 
 .share-btn {
-    background: #00d4aa;
+    background: #321457;
     color: white;
     border: none;
 }
 
 .report-btn:hover, .share-btn:hover {
     transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(50, 20, 87, 0.2);
+}
+
+.share-btn:hover {
+    background: #4a1a6b;
 }
 
 /* Error Styles */
