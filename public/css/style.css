@@ -324,7 +324,7 @@ body {
     background: linear-gradient(135deg, #321457, #4a1a6b);
 }
 
-.transaction-icon.purple {
+.transaction-icon.green {
     background: linear-gradient(135deg, #321457, #4a1a6b);
 }
 
@@ -417,6 +417,10 @@ body {
     background: linear-gradient(135deg, #321457, #4a1a6b);
 }
 
+.action-icon.purple {
+    background: linear-gradient(135deg, #321457, #4a1a6b);
+}
+
 .action-item:hover .action-icon {
     transform: scale(1.05);
 }
@@ -492,6 +496,10 @@ body {
 }
 
 .promo-badge.green {
+    background: #321457;
+}
+
+.promo-badge.purple {
     background: #321457;
 }
 
@@ -979,31 +987,38 @@ body {
 }
 
 .bonus-item:hover {
-    transform: translateY(-1px);
+    margin: 0 20px 32px;
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
 }
 
-.bonus-icon {
+    font-size: 16px;
     font-size: 24px;
     margin-right: 16px;
-    width: 40px;
+    margin-bottom: 16px;
     text-align: center;
+    letter-spacing: -0.3px;
 }
 
 .bonus-text {
     flex: 1;
 }
 
-.bonus-text h4 {
-    font-size: 14px;
-    font-weight: 600;
-    color: #2d3436;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.bonus-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
     margin-bottom: 4px;
     letter-spacing: -0.2px;
 }
-
-.bonus-text p {
-    font-size: 12px;
+    font-size: 24px;
+    margin-right: 16px;
+    width: 40px;
     color: #666;
     line-height: 1.4;
 }
@@ -1012,30 +1027,60 @@ body {
     background: #321457;
     color: white;
     border: none;
-    padding: 8px 16px;
+    font-size: 14px;
     border-radius: 16px;
     font-size: 11px;
-    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: -0.2px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
+    font-size: 12px;
 .bonus-btn.purple:hover {
+    line-height: 1.4;
     background: #4a1a6b;
     transform: translateY(-1px);
 }
-
+    background: #321457;
 /* Loan Banner - Purple Gradient */
 .loan-banner.purple-gradient {
-    background: linear-gradient(135deg, #321457, #4a1a6b, #6c2c91);
-    margin: 0 20px 32px;
-    padding: 20px;
+    padding: 8px 16px;
+    border-radius: 16px;
+    font-size: 11px;
     border-radius: 16px;
     color: white;
     text-align: center;
     box-shadow: 0 8px 24px rgba(50, 20, 87, 0.4);
     position: relative;
     overflow: hidden;
+    background: #4a1a6b;
+
+.loan-banner.purple-gradient::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+/* Loan Banner - Purple Gradient */
+.loan-banner-content {
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    margin: 0 20px 32px;
+    padding: 20px;
+    border-radius: 16px;
+    z-index: 1;
+}
+
+    position: relative;
+    overflow: hidden;
+.loan-info h4 {
+    font-size: 12px;
+    font-weight: 500;
+    background: linear-gradient(135deg, #321457, #4a1a6b, #6c2c91);
+    box-shadow: 0 8px 24px rgba(50, 20, 87, 0.4);
 }
 
 .loan-banner.purple-gradient::before {
@@ -1049,56 +1094,47 @@ body {
     pointer-events: none;
 }
 
-.loan-banner-content {
-    display: flex;
-    justify-content: space-around;
+.loan-amount, .loan-days {
+    font-size: 18px;
+    font-weight: 800;
     margin-bottom: 16px;
     position: relative;
     z-index: 1;
 }
 
-.loan-info h4 {
-    font-size: 12px;
-    font-weight: 500;
-    margin-bottom: 6px;
-    opacity: 0.9;
-}
-
-.loan-amount, .loan-days {
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-}
-
 .loan-cta {
-    background: rgba(255, 255, 255, 0.2);
+    font-size: 12px;
     border: none;
-    color: white;
+    margin-bottom: 6px;
     padding: 10px 20px;
     border-radius: 20px;
     font-size: 12px;
     font-weight: 700;
-    cursor: pointer;
+    font-size: 18px;
     transition: all 0.3s ease;
+    letter-spacing: -0.5px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     position: relative;
     z-index: 1;
 }
 
-.loan-cta:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Details Page Styles - EXACTLY LIKE SECOND IMAGE */
 .details-container {
+    position: relative;
+    z-index: 1;
     max-width: 414px;
     margin: 0 auto;
     padding: 16px;
     background: #f8f9fa;
-    min-height: 100vh;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .details-header {
@@ -1126,19 +1162,21 @@ body {
 }
 
 .transfer-info {
-    text-align: center;
-    margin-bottom: 24px;
-}
-
+    color: #321457;
+    margin-bottom: 40px;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
 .transfer-info h2 {
+    letter-spacing: -0.5px;
     font-size: 16px;
     font-weight: 600;
     color: #2d3436;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
 }
 
 .amount-large {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 800;
     color: #2d3436;
     margin-bottom: 8px;
@@ -1152,7 +1190,7 @@ body {
 
 .progress-steps {
     background: white;
-    padding: 16px;
+    color: #321457;
     border-radius: 12px;
     margin-bottom: 16px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
@@ -1183,14 +1221,14 @@ body {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: #00d4aa;
+    background: #321457;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 11px;
     font-weight: 700;
-    margin-right: 12px;
+    background: #321457;
     z-index: 1;
 }
 
@@ -1212,16 +1250,15 @@ body {
 
 .disclaimer {
     background: rgba(0, 212, 170, 0.1);
-    padding: 12px;
+    letter-spacing: -1px;
     border-radius: 10px;
     margin-bottom: 16px;
     font-size: 11px;
     color: #666;
     line-height: 1.4;
-}
+    background: rgba(50, 20, 87, 0.1);
 
-.contact-link {
-    color: #00d4aa;
+    color: #321457;
     text-decoration: none;
     font-weight: 600;
 }
@@ -1229,7 +1266,7 @@ body {
 .transaction-summary, .transaction-details, .more-actions {
     background: white;
     padding: 16px;
-    border-radius: 12px;
+    color: #321457;
     margin-bottom: 16px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
@@ -1263,6 +1300,7 @@ body {
     font-size: 12px;
     color: #666;
     font-weight: 500;
+    margin-top: 16px;
 }
 
 .value {
@@ -1281,9 +1319,9 @@ body {
 .bottom-actions {
     display: flex;
     gap: 12px;
-    margin: 0 16px 24px;
-}
-
+    padding: 20px 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 .report-btn, .share-btn {
     flex: 1;
     padding: 12px;
@@ -1292,8 +1330,9 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-}
-
+    padding: 12px 8px;
+    border-radius: 12px;
+    flex: 1;
 .report-btn {
     background: rgba(50, 20, 87, 0.1);
     color: #321457;
@@ -1301,24 +1340,29 @@ body {
 }
 
 .share-btn {
-    background: #321457;
-    color: white;
-    border: none;
+    background: rgba(50, 20, 87, 0.1);
+    color: #321457;
+    border: 1px solid rgba(50, 20, 87, 0.3);
 }
 
-.report-btn:hover, .share-btn:hover {
-    transform: translateY(-1px);
+    background: rgba(50, 20, 87, 0.05);
+    background: #321457;
+    background: rgba(50, 20, 87, 0.1);
+}
+
+.share-btn:hover {
+    background: #4a1a6b;
+    background: rgba(50, 20, 87, 0.15);
     box-shadow: 0 4px 12px rgba(50, 20, 87, 0.2);
 }
 
 .share-btn:hover {
     background: #4a1a6b;
-}
 
 /* Error Styles */
 .error-message {
     color: #e74c3c;
-    font-size: 10px;
+    font-size: 11px;
     margin-top: 3px;
     font-weight: 500;
     animation: fadeInUp 0.3s ease-out;
@@ -1333,6 +1377,7 @@ body {
     font-weight: 600;
     margin-top: 6px;
     border-left: 3px solid #e74c3c;
+    line-height: 1.3;
 }
 
 /* Responsive Design */
