@@ -4,23 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transaction Details - Kudasavings</title>
-    
-    <!-- PWA Meta Tags -->
+
     <meta name="theme-color" content="#321457">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="96x96" href="/img/icons8-money-96.png">
-    
-    <!-- Styles -->
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <div class="details-container">
         <!-- Header -->
         <div class="details-header">
-            <button class="back-btn" onclick="window.location.href='/receipt'">
+            <button class="back-btn" onclick="window.history.back()">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -38,7 +31,7 @@
         <div class="bank-icon">
             <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
                 <rect width="60" height="60" rx="30" fill="#321457"/>
-                <path d="M30 15L40 25H35V40H25V25H20L30 15Z" fill="white"/>
+                <path d="M30 20L38 28H34V40H26V28H22L30 20Z" fill="white"/>
             </svg>
         </div>
 
@@ -55,21 +48,21 @@
                 <div class="step-icon">✓</div>
                 <div class="step-text">
                     <div class="step-title">Payment successful</div>
-                    <div class="step-time" id="step1Time">09-02 15:37:16</div>
+                    <div class="step-time" id="step1Time">--</div>
                 </div>
             </div>
             <div class="step">
                 <div class="step-icon">✓</div>
                 <div class="step-text">
                     <div class="step-title">Processing by bank</div>
-                    <div class="step-time" id="step2Time">09-02 15:37:16</div>
+                    <div class="step-time" id="step2Time">--</div>
                 </div>
             </div>
             <div class="step">
                 <div class="step-icon">✓</div>
                 <div class="step-text">
                     <div class="step-title">Received by bank</div>
-                    <div class="step-time" id="step3Time">09-02 15:37:44</div>
+                    <div class="step-time" id="step3Time">--</div>
                 </div>
             </div>
         </div>
@@ -81,7 +74,7 @@
 
         <!-- Transaction Summary -->
         <div class="transaction-summary">
-            <h3>Transaction Summary</h3>
+            <h3>Amount</h3>
             <div class="summary-row">
                 <span class="label">Amount</span>
                 <span class="value" id="summaryAmount">₦0.00</span>
@@ -101,23 +94,23 @@
             <h3>Transaction Details</h3>
             <div class="detail-row">
                 <span class="label">Recipient Details</span>
-                <span class="value" id="recipientDetails">RECIPIENT NAME<br>Bank Name | Account Number</span>
+                <span class="value" id="recipientDetails" style="line-height: 1.5;">--</span>
             </div>
             <div class="detail-row">
                 <span class="label">Transaction No.</span>
-                <span class="value" id="transactionNo">REF123456789</span>
+                <span class="value" id="transactionNo">--</span>
             </div>
             <div class="detail-row">
                 <span class="label">Payment Method</span>
-                <span class="value">Wallet - ₦81.00 ></span>
+                <span class="value">Wallet</span>
             </div>
             <div class="detail-row">
                 <span class="label">Transaction Date</span>
-                <span class="value" id="transactionDate">Sep 2nd, 2025 15:37:16</span>
+                <span class="value" id="transactionDate">--</span>
             </div>
             <div class="detail-row">
                 <span class="label">Session ID</span>
-                <span class="value" id="sessionId">SESSION123456789</span>
+                <span class="value" id="sessionId">--</span>
             </div>
         </div>
 
@@ -126,94 +119,17 @@
             <h4>More Actions</h4>
             <div class="action-row">
                 <span class="label">Category</span>
-                <span class="value">Transfer ></span>
+                <span class="value">Transfer  ></span>
             </div>
         </div>
 
         <!-- Bottom Actions -->
         <div class="bottom-actions">
-            <button class="report-btn" onclick="window.location.href='/'">Report Issue</button>
+            <button class="report-btn" onclick="window.location.href='/dashboard.html'">Back to Dashboard</button>
             <button class="share-btn" onclick="shareReceipt()">Share Receipt</button>
         </div>
     </div>
 
-    <script>
-        // Load transaction data and display
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('/api/transaction-data')
-                .then(response => response.json())
-                .then(data => {
-                    if (data) {
-                        // Update transfer info
-                        document.getElementById('transferTitle').textContent = `Transfer to ${data.accountName || 'RECIPIENT NAME'}`;
-                        
-                        const amount = new Intl.NumberFormat('en-NG', {
-                            style: 'currency',
-                            currency: 'NGN'
-                        }).format(data.amount || 0);
-                        
-                        document.getElementById('transferAmount').textContent = amount;
-                        document.getElementById('summaryAmount').textContent = amount;
-                        document.getElementById('summaryTotal').textContent = amount;
-                        
-                        // Update recipient details
-                        document.getElementById('recipientDetails').innerHTML = 
-                            `${data.accountName || 'RECIPIENT NAME'}<br>${data.bankName || 'Bank Name'} | ${data.accountNumber || 'Account Number'}`;
-                        
-                        // Update reference number
-                        document.getElementById('transactionNo').textContent = data.referenceNumber || 'REF123456789';
-                        
-                        // Update transaction date
-                        if (data.transactionDate) {
-                            const date = new Date(data.transactionDate);
-                            document.getElementById('transactionDate').textContent = 
-                                date.toLocaleDateString('en-US', {
-                                    year: 'numeric',
-                                    month: 'short',
-                                    day: 'numeric',
-                                    hour: '2-digit',
-                                    minute: '2-digit',
-                                    second: '2-digit'
-                                });
-                            
-                            // Update step times
-                            const timeStr = date.toLocaleDateString('en-GB', {
-                                day: '2-digit',
-                                month: '2-digit',
-                                hour: '2-digit',
-                                minute: '2-digit',
-                                second: '2-digit'
-                            }).replace(/\//g, '-');
-                            
-                            document.getElementById('step1Time').textContent = timeStr;
-                            document.getElementById('step2Time').textContent = timeStr;
-                            document.getElementById('step3Time').textContent = timeStr;
-                        }
-                        
-                        // Generate session ID
-                        document.getElementById('sessionId').textContent = 
-                            '1000042509021437241402499380' + Math.floor(Math.random() * 100);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error loading transaction data:', error);
-                });
-        });
-
-        function shareReceipt() {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Transaction Receipt',
-                    text: 'Check out my transaction receipt from Kudasavings',
-                    url: window.location.origin + '/receipt'
-                });
-            } else {
-                // Fallback: Copy link to clipboard
-                navigator.clipboard.writeText(window.location.origin + '/receipt').then(() => {
-                    alert('Receipt link copied to clipboard!');
-                });
-            }
-        }
-    </script>
+    <script src="/js/details.js"></script>
 </body>
 </html>

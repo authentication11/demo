@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Kudasavings</title>
+
+    <meta name="theme-color" content="#321457">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/icons8-money-96.png">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <div class="dashboard-header">
+            <div class="user-info">
+                <div class="avatar">
+                    <img src="/img/icons8-money-96.png" alt="User" style="filter: brightness(0) invert(1);">
+                </div>
+                <span class="greeting-text" id="greetingText">Hi, User</span>
+            </div>
+            <div class="header-actions">
+                <div style="position: relative; cursor: pointer;">
+                    <span style="font-size: 20px;">🔔</span>
+                    <span class="notification-badge">10</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Balance Card -->
+        <div class="balance-card">
+            <div class="balance-header">
+                <div class="balance-label">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" fill="white" opacity="0.9"/>
+                    </svg>
+                    Available Balance
+                </div>
+                <div class="transaction-history-btn" onclick="goToHistory()">
+                    Transaction History
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="balance-amount" id="dashboardBalance">
+                ₦0.00
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="cursor: pointer;" onclick="toggleBalance()">
+                    <path d="M1 12S5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="12" cy="12" r="3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <button class="add-money-btn" onclick="goToAddMoney()">+ Add Money</button>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <div class="action-item" onclick="alert('Feature coming soon!')">
+                <div class="action-icon green">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="8.5" cy="7" r="4" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <span>To OPay</span>
+            </div>
+
+            <div class="action-item" onclick="goToTransfer()">
+                <div class="action-icon green">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 6H21M3 12H21M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M9 2V6M15 2V6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span>To Bank</span>
+            </div>
+
+            <div class="action-item" onclick="alert('Feature coming soon!')">
+                <div class="action-icon green">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <span>Withdraw</span>
+            </div>
+        </div>
+
+        <!-- Recent Transactions -->
+        <div class="recent-transactions" id="recentTransactions">
+            <!-- Transactions will be loaded here -->
+        </div>
+
+        <!-- Services Grid -->
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-icon">📱</div>
+                <span>Airtime</span>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">📊</div>
+                <span>Data</span>
+                <span class="promo-badge green">Up to 10%</span>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">⚙️</div>
+                <span>Betting</span>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">📺</div>
+                <span>TV</span>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🔐</div>
+                <span>Safebox</span>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">💰</div>
+                <span>Loan</span>
+                <span class="promo-badge">Newest</span>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">👶</div>
+                <span>Play4aChild</span>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">⋯</div>
+                <span>More</span>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <div class="nav-item active">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="#321457" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Home</span>
+            </div>
+            <div class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#999" stroke-width="2"/>
+                    <path d="M12 6V12L16 14" stroke="#999" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>Rewards</span>
+            </div>
+            <div class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7 10L12 15L17 10M12 15V3" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Finance</span>
+            </div>
+            <div class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect x="3" y="7" width="18" height="13" rx="2" stroke="#999" stroke-width="2"/>
+                    <path d="M3 10H21" stroke="#999" stroke-width="2"/>
+                    <circle cx="7" cy="15" r="1" fill="#999"/>
+                </svg>
+                <span>Cards</span>
+            </div>
+            <div class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="12" cy="7" r="4" stroke="#999" stroke-width="2"/>
+                </svg>
+                <span>Me</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="loading-spinner">
+            <img src="/img/icons8-money-96.png" alt="Loading" class="loading-icon">
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

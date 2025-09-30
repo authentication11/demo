@@ -37,7 +37,7 @@ app.get('/browserconfig.xml', (req, res) => {
 
 // Routes
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
 });
 
 app.post('/submit-transaction', (req, res) => {

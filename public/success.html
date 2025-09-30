@@ -3,24 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transaction Receipt - Kudasavings</title>
-    
-    <!-- PWA Meta Tags -->
+    <title>Transfer Successful - Kudasavings</title>
+
     <meta name="theme-color" content="#321457">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="96x96" href="/img/icons8-money-96.png">
-    
-    <!-- Styles -->
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="receipt-page">
     <div class="receipt-container">
         <!-- Header -->
         <div class="receipt-header">
-            <button class="done-btn" onclick="window.location.href='/'">Done</button>
+            <button class="done-btn" onclick="window.location.href='/dashboard.html'">Done</button>
         </div>
 
         <!-- Success Icon -->
@@ -34,13 +27,13 @@
         </div>
 
         <!-- Success Content -->
-        <div class="success-content">
+        <div style="text-align: center; padding: 0 24px; margin-bottom: 32px;">
             <h1 class="success-title">Transfer successful</h1>
-            
+
             <div class="amount-display">
                 <span id="receiptAmount">₦0.00</span>
             </div>
-            
+
             <p class="receipt-message">
                 The recipient account is expected to be credited within 5 minutes, subject to notification by the bank.
             </p>
@@ -56,7 +49,7 @@
                 </div>
                 <span>Share Receipt</span>
             </div>
-            
+
             <div class="action-item" onclick="addToFavorites()">
                 <div class="action-icon">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -67,7 +60,7 @@
                 </div>
                 <span>Add to favourites</span>
             </div>
-            
+
             <div class="action-item" onclick="viewDetails()">
                 <div class="action-icon">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -81,46 +74,46 @@
         <!-- Special Bonus Section -->
         <div class="bonus-section">
             <h3>Special Bonus For You</h3>
-            
+
             <div class="bonus-item">
                 <div class="bonus-icon">💰</div>
                 <div class="bonus-text">
                     <h4>Save easily</h4>
                     <p>Earn more interest every day!</p>
                 </div>
-                <button class="bonus-btn purple">GO</button>
+                <button class="bonus-btn">GO</button>
             </div>
-            
+
             <div class="bonus-item">
                 <div class="bonus-icon">💳</div>
                 <div class="bonus-text">
                     <h4>Enjoy online payment</h4>
                     <p>Using Kudasavings Card now</p>
                 </div>
-                <button class="bonus-btn purple">GO</button>
+                <button class="bonus-btn">GO</button>
             </div>
-            
+
             <div class="bonus-item">
                 <div class="bonus-icon">⚙️</div>
                 <div class="bonus-text">
                     <h4>Bet big, win bigger!</h4>
-                    <p>Get Discounts That Wow! 🤩</p>
+                    <p>Get Discounts That Wow!</p>
                 </div>
-                <button class="bonus-btn purple">GO</button>
+                <button class="bonus-btn">GO</button>
             </div>
-            
+
             <div class="bonus-item">
                 <div class="bonus-icon">💡</div>
                 <div class="bonus-text">
                     <h4>Electricity Payment</h4>
                     <p>Fast&Easy Electricity Bill Pay</p>
                 </div>
-                <button class="bonus-btn purple">GO</button>
+                <button class="bonus-btn">GO</button>
             </div>
         </div>
 
         <!-- Loan Banner -->
-        <div class="loan-banner purple-gradient">
+        <div class="loan-banner">
             <div class="loan-banner-content">
                 <div class="loan-info">
                     <h4>Loan up to(₦)</h4>
@@ -135,47 +128,6 @@
         </div>
     </div>
 
-    <script>
-        // Load transaction data and display
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('/api/transaction-data')
-                .then(response => response.json())
-                .then(data => {
-                    if (data.amount) {
-                        document.getElementById('receiptAmount').textContent = 
-                            new Intl.NumberFormat('en-NG', {
-                                style: 'currency',
-                                currency: 'NGN'
-                            }).format(data.amount);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error loading transaction data:', error);
-                });
-        });
-
-        function shareReceipt() {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Transaction Receipt',
-                    text: 'Check out my transaction receipt from Kudasavings',
-                    url: window.location.href
-                });
-            } else {
-                // Fallback: Copy link to clipboard
-                navigator.clipboard.writeText(window.location.href).then(() => {
-                    alert('Receipt link copied to clipboard!');
-                });
-            }
-        }
-
-        function addToFavorites() {
-            alert('Added to favorites!');
-        }
-
-        function viewDetails() {
-            window.location.href = '/details';
-        }
-    </script>
+    <script src="/js/success.js"></script>
 </body>
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History - Kudasavings</title>
+
+    <meta name="theme-color" content="#321457">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/icons8-money-96.png">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <button class="back-btn" onclick="window.location.href='/dashboard.html'">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h1>Transactions</h1>
+            <button class="download-btn" onclick="downloadHistory()">Download</button>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <select class="filter-select">
+                <option>All Categories</option>
+                <option>Transfers</option>
+                <option>Top-ups</option>
+            </select>
+            <select class="filter-select">
+                <option>All Status</option>
+                <option>Successful</option>
+                <option>Failed</option>
+            </select>
+        </div>
+
+        <!-- Transactions List -->
+        <div id="transactionsList">
+            <!-- Will be populated dynamically -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" style="display: none; text-align: center; padding: 60px 20px;">
+            <div style="font-size: 48px; margin-bottom: 16px;">📋</div>
+            <div style="font-size: 18px; font-weight: 600; color: #2d3436; margin-bottom: 8px;">No Transactions Yet</div>
+            <div style="font-size: 14px; color: #666;">Your transaction history will appear here</div>
+            <button class="submit-btn" style="margin-top: 24px; max-width: 200px;" onclick="window.location.href='/dashboard.html'">
+                Go to Dashboard
+            </button>
+        </div>
+    </div>
+
+    <script src="/js/history.js"></script>
+</body>
+</html>
