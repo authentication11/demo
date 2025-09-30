@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transaction Details - Kudasavings</title>
 
-    <meta name="theme-color" content="#321457">
+    <meta name="theme-color" content="#6a11cb">
     <link rel="icon" type="image/png" sizes="96x96" href="/img/icons8-money-96.png">
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -30,7 +30,13 @@
         <!-- Bank Icon -->
         <div class="bank-icon">
             <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-                <rect width="60" height="60" rx="30" fill="#321457"/>
+                <rect width="60" height="60" rx="30" fill="url(#bankGradient)"/>
+                <defs>
+                    <linearGradient id="bankGradient" x1="0" y1="0" x2="60" y2="60">
+                        <stop offset="0%" stop-color="#6a11cb"/>
+                        <stop offset="100%" stop-color="#2575fc"/>
+                    </linearGradient>
+                </defs>
                 <path d="M30 20L38 28H34V40H26V28H22L30 20Z" fill="white"/>
             </svg>
         </div>
@@ -44,32 +50,34 @@
 
         <!-- Progress Steps -->
         <div class="progress-steps">
-            <div class="step">
-                <div class="step-icon">✓</div>
-                <div class="step-text">
-                    <div class="step-title">Payment successful</div>
-                    <div class="step-time" id="step1Time">--</div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-icon">✓</div>
+                    <div class="step-text">
+                        <div class="step-title">Payment successful</div>
+                        <div class="step-time" id="step1Time">--</div>
+                    </div>
                 </div>
-            </div>
-            <div class="step">
-                <div class="step-icon">✓</div>
-                <div class="step-text">
-                    <div class="step-title">Processing by bank</div>
-                    <div class="step-time" id="step2Time">--</div>
+                <div class="step">
+                    <div class="step-icon">✓</div>
+                    <div class="step-text">
+                        <div class="step-title">Processing by bank</div>
+                        <div class="step-time" id="step2Time">--</div>
+                    </div>
                 </div>
-            </div>
-            <div class="step">
-                <div class="step-icon">✓</div>
-                <div class="step-text">
-                    <div class="step-title">Received by bank</div>
-                    <div class="step-time" id="step3Time">--</div>
+                <div class="step">
+                    <div class="step-icon">✓</div>
+                    <div class="step-text">
+                        <div class="step-title">Received by bank</div>
+                        <div class="step-time" id="step3Time">--</div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Disclaimer -->
         <div class="disclaimer">
-            The recipient account is expected to be credited within 5 minutes, subject to notification by the bank. If you have any questions, you can also <a href="#" class="contact-link">contact the recipient bank</a> 📞
+            The recipient account is expected to be credited within 5 minutes, subject to notification by the bank. If you have any questions, you can also <a href="#" class="contact-link">contact the recipient bank</a>.
         </div>
 
         <!-- Transaction Summary -->

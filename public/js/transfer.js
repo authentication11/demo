@@ -100,11 +100,11 @@ document.getElementById('transferForm')?.addEventListener('submit', function(e) 
     localStorage.setItem('kudasavingsData', JSON.stringify(appData));
     localStorage.setItem('currentTransaction', JSON.stringify(transaction));
 
-    // Simulate processing
+    // Simulate realistic processing time
     setTimeout(() => {
         document.getElementById('loadingOverlay').classList.add('hidden');
         window.location.href = '/success.html';
-    }, 2000);
+    }, 6000);
 });
 
 // Generate reference number

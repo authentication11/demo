@@ -47,8 +47,8 @@ function updateUI() {
         recentContainer.innerHTML = recent.map(tx => `
             <div class="transaction-item" onclick="viewTransaction('${tx.id}')">
                 <div class="transaction-icon ${tx.type === 'credit' ? 'green' : 'purple'}">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="${tx.type === 'credit' ? 'M12 5V19M5 12L12 5L19 12' : 'M12 19V5M5 12L12 19L19 12'}" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="${tx.type === 'credit' ? 'M12 19V5M5 12L12 5L19 12' : 'M12 5V19M5 12L12 19L19 12'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
                 <div class="transaction-details">
